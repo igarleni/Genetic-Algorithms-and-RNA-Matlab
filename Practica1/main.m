@@ -1,21 +1,21 @@
 function [fin] = main()
     fin = 0;
     
-    pob = Inicializa_poblacion(100);
-    ordenaFitness(pob);
+    pop = Inicializa_poblacion(100);
+    pop = OrdenaFitness(pop);
     
-    while (evaluarEstado(pob)) %si el primero cumple las condiciones, exit while
-        pob = Seleccionar(pob); %seleccionar 2/3 mejores
-        MostrarPob.mostrarPadre(pob);
+    while (evaluarEstado(pop)) %si el primero cumple las condiciones, exit while
+        pop = Seleccionar(pop); %seleccionar 2/3 mejores
+        MostrarPob.MostrarPadre(pop);
         
-        pobHijo = cruzar(pob); %hacer cruce de cromosomas
-        MostrarPob.mostrarHijos(pob);
+        popHijo = Cruzar(pop); %hacer cruce de cromosomas
+        MostrarPob.MostrarHijos(pop);
         
-        cromosomaMutado = mutar(pobHijo); %escoger uno aleatorio y cambiarle un bit
+        cromosomaMutado = Mutar(popHijo); %escoger uno aleatorio y cambiarle un bit
         MostrarPob.MostrarMutado(cromosomaMutado);
         
-        ordenaFitness(pobHijo); %ordenar la nueva población
-        pob = pobHijo;
+        OrdenaFitness(popHijo); %ordenar la nueva población
+        pop = popHijo;
     end
     
 end
