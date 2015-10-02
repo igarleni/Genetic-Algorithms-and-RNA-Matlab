@@ -18,8 +18,8 @@ function [Pop]=Cruzar(pop)
         end 
         
         
-        Pop(i) = [pop(j, 1:lim1);pop(j+1, lim1+lim2);pop(j, lim2+1:29)];
-        Pop(i+1) = [pop(j+1, 1:lim1);pop(j, lim1+lim2);pop(j+1, lim2+1:29)];
+        Pop(i) = [pop(j, 1:lim1);pop(j+1, lim1+1:lim2);pop(j, lim2+1:29)];
+        Pop(i+1) = [pop(j+1, 1:lim1);pop(j, lim1+1:lim2);pop(j+1, lim2+1:29)];
         i = i+2;
     end
     
