@@ -1,0 +1,35 @@
+function [pop] = Mutar (pop, prob)
+    L = length(pop);
+    NGenes = prob*L;
+    GenesMutar = [];
+    
+    for i=1:NGenes
+        LGenesMutar = length(GenesMutar);
+        GenMutar = randi([1, 29])
+        for j=1:LGenesMutar
+            if GenMutar == GenesMutar(i)
+                i = i-1;
+                break;
+            end
+            if i == LGenesMutar
+                GenesMutar = [GenesMutar, GenMutar];
+                 GenMutar(irandi([1, 29]); %Calculamos el punto en el que mutará
+            end
+        
+        end
+        
+    end
+    
+    
+    
+    
+    for i=1:L
+        if(rand(1) <= prob) %Si toca un nº por debajo o igual a la prob de mutar, muta
+            
+            %Accedemos al cromosoma posiMutar del gen en la posición i
+            %Si hay un 0 => abs(0-1)-->abs(-1)=1, Si hay un 1 => abs(1-1), abs(0) = 0
+            pop(i, posiMutar) = abs(pop(i, posiMutar) - 1);             
+                
+        end
+    end
+end

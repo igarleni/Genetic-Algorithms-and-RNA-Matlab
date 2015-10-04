@@ -3,7 +3,7 @@ function [fin] = main(I , maxGen)
     
     pop = Inicializa_poblacion(100);
     pop = OrdenaFitness(pop, I);
-    probMutacion = 10;
+    probMutacion = 0.07;
     
     numeroGeneraciones = 1;
     MostrarPop(pop, I, numeroGeneraciones);
