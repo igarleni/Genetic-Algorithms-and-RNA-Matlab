@@ -1,3 +1,12 @@
-function [pob] = Mutar (pop)
-    
+function [pop] = Mutar (pop, prob)
+    L = length(pop);
+    for i=1:L
+        if(rand(1) <= prob) %Si toca un nº por debajo o igual a la prob de mutar, muta
+            posiMutar = randi([1, 29]); %Calculamos el punto en el que mutará
+            %Accedemos al cromosoma posiMutar del gen en la posición i
+            %Si hay un 0 => abs(0-1)-->abs(-1)=1, Si hay un 1 => abs(1-1), abs(0) = 0
+            pop(i, posiMutar) = abs(pop(i, posiMutar) - 1);             
+                
+        end
+    end
 end
