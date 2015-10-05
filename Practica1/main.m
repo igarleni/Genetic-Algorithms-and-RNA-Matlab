@@ -1,6 +1,7 @@
 function [fin] = main(rutaImagen , maxGen, minFitness)
     fin = 0;
     
+    minFitness = 0.8;
     rutaImagen = 'Assorted_United_States_coins_contraste_alto_Gray_Scale.jpg';
     imagen = imread(rutaImagen);
     [Gmag, Gdir] = imgradient(imagen,'prewitt');
