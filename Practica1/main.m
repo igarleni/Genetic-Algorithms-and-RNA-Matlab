@@ -7,7 +7,7 @@ function [fin] = main(imagen , maxGen)
     probMutacion = 0.07;
     
     numeroGeneraciones = 1;
-    MostrarPop(pop, I, numeroGeneraciones);
+    MostrarPop(pop, I);
 
     while (EvaluarEstado(pop, maxGen)) %si el primero cumple las condiciones o si hay muchas generaciones, exit while
         pop = pop(1:70,:); %seleccionar 2/3 mejores

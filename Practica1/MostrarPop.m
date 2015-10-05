@@ -1,4 +1,4 @@
-function [] = MostrarPop(pop, I, numGeneraciones)
+function [] = MostrarPop(pop, I)
 
         figure;
 
@@ -6,14 +6,12 @@ function [] = MostrarPop(pop, I, numGeneraciones)
         imshow(I);
         axis equal;
         axis off;
-        whitebg('black');
-        title(['Generacion nº ', numGeneraciones]);
         
         popSize = size(pop);
         for ind = 1:popSize(1)
-            x0 = binario_a_entero (Pop(1,11:16)) + 19;
-            y0 = binario_a_entero (Pop(1,17:22)) + 19;
-            plot(x0,y0,'*');
+            x0 = binario_a_entero (pop(ind,11:16)) + 19;
+            y0 = binario_a_entero (pop(ind,17:22)) + 19;
+            plot(x0,y0,'r.','MarkerSize',20);
         end
         
         hold off;
