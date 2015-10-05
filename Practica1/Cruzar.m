@@ -14,7 +14,6 @@ function [popHijo] = Cruzar (pop)
 end
 
 function [hijos] = Combinar (padre, madre)
-	rng(0,'twister');
 	ind1 = round(25*rand(1)+2);
 	ind2 = round((28-ind1)*rand(1)+ind1);
 	hijos = [];

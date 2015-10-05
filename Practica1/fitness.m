@@ -11,8 +11,8 @@ function [fit] = fitness(Pop, I) %Asumiendo valores positivos
         
         elipse = [];
         for alpha=0.2:0.2:2*pi
-            x = round( (a*cos(alpha)+x0)*cos(theta) + (b*sin(alpha)+y0)*sin(theta));
-            y = round((a*cos(alpha)+x0)*sin(theta)+(b*sin(alpha)+y0)*cos(theta));
+            x = round((a*cos(alpha))*cos(theta) - (b*sin(alpha)+y0)*sin(theta)+x0);
+            y = round((a*cos(alpha))*sin(theta) + (b*sin(alpha)+y0)*cos(theta)+y0);
             elipse = [elipse; x y];
         end
         

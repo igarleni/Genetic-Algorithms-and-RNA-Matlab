@@ -17,7 +17,7 @@ function [popOrden] = OrdenaFitness(pop, I)
                     break;
                 else
                     popAux = popOrden(j:LPopOrden, :);
-                    popOrden = (popOrden(1:j-1,:), pop(i,:), popAux); 
+                    popOrden = [popOrden(1:j-1,:); pop(i,:); popAux]; 
                     break;
                 end
             else

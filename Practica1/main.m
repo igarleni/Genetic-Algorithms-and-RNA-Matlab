@@ -1,6 +1,7 @@
-function [fin] = main(I , maxGen)
+function [fin] = main(imagen , maxGen)
     fin = 0;
-    
+    img = imread(imagen);
+    I = im2bw(img,0.4);
     pop = Inicializa_poblacion(100);
     pop = OrdenaFitness(pop, I);
     probMutacion = 0.07;
