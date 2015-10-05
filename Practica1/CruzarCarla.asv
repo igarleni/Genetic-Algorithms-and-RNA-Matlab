@@ -1,10 +1,10 @@
-function [Pop]=CruzarCarla(pop, I)
+function [Pop]=CruzarCarla(pop)
     Pop = [];
     Pop = [Pop; pop(1:5, :)];
     i = 6;
         
 
-    for j=1:2:size(pop)
+    for j=1:2:69
         
         lim1 = randi([1, 28]);
         lim2 = lim1;
