@@ -1,9 +1,9 @@
-function [fin] = main(imagen , maxGen)
+function [fin] = main(rutaImagen , maxGen, minFitness)
     fin = 0;
     
-    imagen = 'Assorted_United_States_coins_contraste_alto_Gray_Scale.jpg';
-    img = imread(imagen);
-    [Gmag, Gdir] = imgradient(img,'prewitt');
+    rutaImagen = 'Assorted_United_States_coins_contraste_alto_Gray_Scale.jpg';
+    imagen = imread(rutaImagen);
+    [Gmag, Gdir] = imgradient(imagen,'prewitt');
     I = round(mat2gray(Gmag));
     
     pop = Inicializa_poblacion(100);
@@ -13,7 +13,7 @@ function [fin] = main(imagen , maxGen)
     numeroGeneraciones = 1;
     MostrarPop(pop, I);
 
-    while (EvaluarEstado(pop, maxGen)) %si el primero cumple las condiciones o si hay muchas generaciones, exit while
+    while (EvaluarEstado(pop, minFitness) && (numeroGeneraciones >= maxGen)) %si el primero cumple las condiciones o si hay muchas generaciones, exit while
         pop = pop(1:70,:); %seleccionar 2/3 mejores
         
         popHijo = Cruzar(pop); %hacer cruce de cromosomas
