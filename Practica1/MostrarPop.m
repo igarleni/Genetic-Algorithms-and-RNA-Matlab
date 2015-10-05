@@ -4,7 +4,6 @@ function [] = MostrarPop(pop, I)
 
         imshow(I);
         hold on;
-        imshow(I);
         axis equal;
         axis off;
         
@@ -12,7 +11,7 @@ function [] = MostrarPop(pop, I)
         for ind = 1:popSize(1)
             x0 = binario_a_entero (pop(ind,11:16)) + 19;
             y0 = binario_a_entero (pop(ind,17:22)) + 19;
-            plot(x0,y0,'r.','MarkerSize',20);
+            plot(x0,y0,'r.');
         end
         
         hold off;

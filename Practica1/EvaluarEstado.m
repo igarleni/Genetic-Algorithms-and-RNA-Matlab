@@ -1,4 +1,4 @@
-function [cond] = EvaluarEstado(pop, minFitness)
+function [cond] = EvaluarEstado(pop, minFitness, I)
     cromosomaLider = pop(1,:);
     fit = fitness(cromosomaLider,I);
     

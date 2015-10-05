@@ -14,7 +14,7 @@ function [fin] = main(rutaImagen , maxGen, minFitness)
     numeroGeneraciones = 1;
     MostrarPop(pop, I);
 
-    while (EvaluarEstado(pop, minFitness) && (numeroGeneraciones >= maxGen)) %si el primero cumple las condiciones o si hay muchas generaciones, exit while
+    while (EvaluarEstado(pop, minFitness, I) && (numeroGeneraciones >= maxGen)) %si el primero cumple las condiciones o si hay muchas generaciones, exit while
         pop = pop(1:70,:); %seleccionar 2/3 mejores
         
         popHijo = Cruzar(pop); %hacer cruce de cromosomas

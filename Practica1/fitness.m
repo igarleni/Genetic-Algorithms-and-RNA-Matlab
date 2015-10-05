@@ -14,7 +14,7 @@ function [fit] = fitness(Pop, I) %Asumiendo valores positivos
         for alpha=0.2:0.2:2*pi
             x = round((a*cos(alpha))*cos(theta) - (b*sin(alpha)+y0)*sin(theta)+x0);
             y = round((a*cos(alpha))*sin(theta) + (b*sin(alpha)+y0)*cos(theta)+y0);
-            if ( ~( 0<x && x<=100 || 0<y && y<=100 ) )
+            if ( 0>x || x>100 || 0>y || y>100 )
                 falloElipse = 1;
                 break;
             end
