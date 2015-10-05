@@ -2,6 +2,7 @@ function [] = MostrarPop(pop, I)
 
         figure;
 
+        imshow(I);
         hold on;
         imshow(I);
         axis equal;

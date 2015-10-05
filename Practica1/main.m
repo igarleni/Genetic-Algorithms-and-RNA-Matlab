@@ -1,7 +1,11 @@
 function [fin] = main(imagen , maxGen)
     fin = 0;
+    
+    imagen = 'Assorted_United_States_coins_contraste_alto_Gray_Scale.jpg';
     img = imread(imagen);
-    I = im2bw(img,0.4);
+    [Gmag, Gdir] = imgradient(img,'prewitt');
+    I = round(mat2gray(Gmag));
+    
     pop = Inicializa_poblacion(100);
     pop = OrdenaFitness(pop, I);
     probMutacion = 0.07;
