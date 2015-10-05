@@ -1,6 +1,7 @@
-function [pop] = OrdenaFitnessBurbuja(pop, I)
+function [popO] = OrdenaFitnessBurbuja(pop, I)
 
     n=size(pop);
+    popO = [];
     if(n>1)
         for i=1:n 
             for j=1:n-i 
@@ -11,7 +12,12 @@ function [pop] = OrdenaFitnessBurbuja(pop, I)
                 end
             end
         end
-    end    
+    end
+    n=size(pop);
+    for i=
+        popO = [popO; pop(
+    
+    end
 end
 
 

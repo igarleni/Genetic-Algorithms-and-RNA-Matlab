@@ -6,12 +6,12 @@ function [popOrden] = OrdenaFitness(pop, I)
     else
         popOrden = [pop(2,:); pop(1,:)];
     end
-    L = length(pop);
+    L = size(pop);
     
     for i=2:L
         LPopOrden = size(popOrden);
         for j=1:popOrden
-            if (fitnessCarla(pop(i,:), I) > fitnessCarla(popOrden(j,:), I)) %positivo detectado
+            if (fitnessCarla(pop(i,:), I) > fitnessCarla(popOrden(j,:), I))
                 if(j == 1)
                     popOrden = [pop(i,:); popOrden];
                     break;
