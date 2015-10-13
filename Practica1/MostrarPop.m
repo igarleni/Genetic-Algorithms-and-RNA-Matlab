@@ -17,8 +17,8 @@ function [] = MostrarPop(pop, I)
         hold off;
         cameratoolbar;
         
-        pause(2);
-        close;
+        %pause(2);
+        %close;
         
 
 end

@@ -12,9 +12,9 @@ function [fit] = fitness(Pop, I) %Asumiendo valores positivos
         elipse = [];
         falloElipse = 0;
         for alpha=0.2:0.2:2*pi
-            x = round((a*cos(alpha))*cos(theta) - (b*sin(alpha)+y0)*sin(theta)+x0);
-            y = round((a*cos(alpha))*sin(theta) + (b*sin(alpha)+y0)*cos(theta)+y0);
-            if ( 0>x || x>100 || 0>y || y>100 )
+        x = round((a*cos(alpha)).*cos(theta) - (b*sin(alpha)).*sin(theta) +x0);
+        y = round((a*cos(alpha)).*sin(theta) + (b*sin(alpha)).*cos(theta) +y0);
+            if ( 0>=x || x>100 || 0>=y || y>100 )
                 falloElipse = 1;
                 break;
             end
@@ -23,7 +23,7 @@ function [fit] = fitness(Pop, I) %Asumiendo valores positivos
         
         %comprobamos el matching con la imagen
         if (falloElipse)
-            fit(ind) = 0;
+            fit(ind, 1) = 0;
         else
             contador = 0;
             for i=1:size(elipse,1)
@@ -31,7 +31,7 @@ function [fit] = fitness(Pop, I) %Asumiendo valores positivos
                    contador = contador+1;
                 end
             end
-            fit(ind) = contador/size(elipse,1);
+            fit(ind, 1) = contador/size(elipse,1);
         end
     end
 end

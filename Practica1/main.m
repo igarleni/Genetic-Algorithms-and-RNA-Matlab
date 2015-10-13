@@ -27,7 +27,7 @@ function [fin] = main(rutaImagen , maxGen, minFitness)
         pop = popHijo;
         
         numeroGeneraciones = numeroGeneraciones + 1;
-        MostrarPop(pop, I, numeroGeneraciones);
+        MostrarPop(pop, I);
         
     end
     MostrarCandidato(pop, I);
