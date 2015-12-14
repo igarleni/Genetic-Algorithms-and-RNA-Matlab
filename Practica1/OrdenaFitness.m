@@ -1,6 +1,8 @@
-function [popOrden] = OrdenaFitness(pop, I)
+function [aux,fit_ordenado] = OrdenaFitness(pop, fit)
 
-    popOrden = [pop, fitnessCarla(pop, I)];
+    popOrden = [pop, fit];
     popOrden = sortrows(popOrden,-30);
-    popOrden = popOrden(:, 1:30);
+    aux = popOrden(:, 1:29);
+    fit_ordenado = popOrden(:,30);
+
 end

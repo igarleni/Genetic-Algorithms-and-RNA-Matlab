@@ -1,5 +1,5 @@
 function [pop] = Mutar (pop, prob)
-    L = length(pop);
+    L = size(pop,1);
     for i=1:L
         if(rand(1) <= prob) %Si toca un nº por debajo o igual a la prob de mutar, muta
             posiMutar = randi([1, 29]); %Calculamos el punto en el que mutará
