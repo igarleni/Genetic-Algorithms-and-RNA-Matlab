@@ -10,7 +10,7 @@ tamPoblacion = tamPoblacion/2;
 %calculo del fitness medio y maximo por generacion
 medias = [];
 maximos = datos(:,1:2);
-%HASTA AQUI FUNCIONA
+
 for i=1:generaciones
     generacionSemaforo = [];
     generacionAceleracion = [];
@@ -42,3 +42,15 @@ for i=1:generaciones
 end
 hold off;
 
+%frontera de pareto ARREGLAR?
+figure;
+hold on;
+axis([0.8 1.0 0.9 1.0]);
+unOctavo= round(tamPoblacion/8);
+for i=1:generaciones
+    plot(maximos(i,1),maximos(i,2),'b*');
+    for j=3:unOctavo
+        plot(datos(i,1+(j-1)*2),datos(i,j*2),'ro');
+    end
+end
+hold off;
