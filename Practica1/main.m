@@ -15,7 +15,7 @@ function [fin] = main(maxGen, popSize, probMutacion)
     dos_tercios = round(popSize*2/6)*2;%dos tercios pares
     
     for i=1:maxGen
-        [fit] = fitnessCarla(pop,I);
+        [fit] = fitness(pop,I);
         [pop,fit] = OrdenaFitness(pop, fit);
         disp(fit(1));
         if fit(1) == 1
@@ -26,8 +26,7 @@ function [fin] = main(maxGen, popSize, probMutacion)
         pop = popHijo;
     end
     
-    fit = fitnessCarla(pop,I);
+    fit = fitness(pop,I);
     [pop,fit] = OrdenaFitness(pop, fit);
     MostrarCandidato(pop, I);
-    
 end

@@ -18,12 +18,8 @@ function [] = MostrarCandidato(pop, I)
     
     plot(y0,x0,'*');
     for alpha=0.2:0.2:2*pi
-        %x = round(((a*cos(alpha)).*cos(theta))*x0 - ((b*sin(alpha)).*sin(theta))*y0);
-        %y = round(((a*cos(alpha)).*sin(theta))*x0 + ((b*sin(alpha)).*cos(theta))*y0);
         x = round(((a*cos(alpha)).*cos(theta) - (b*sin(alpha)).*sin(theta)) +x0);
         y = round(((a*cos(alpha)).*sin(theta) + (b*sin(alpha)).*cos(theta)) +y0);
-        %x = round((a*cos(alpha)+x0)*cos(theta)+(b*sin(alpha)+y0).*sin(theta));
-        %y = round((a*cos(alpha)+x0)*sin(theta)+(b*sin(alpha)+y0).*cos(theta));
         plot(y,x,'r.');
     end
     
