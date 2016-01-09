@@ -19,14 +19,11 @@ figure;
 hold on;
 axis([0 21 0.7 1.0]);
 for i=1:generaciones
-    plot(i,maximos(i),'o');
+    plot(i,maximos(i),'r*');
 end
-hold off;
 
-figure;
-hold on;
 axis([0 21 0.5 1.0]);
 for i=1:generaciones
-    plot(i,medias(i),'o');
+    plot(i,medias(i),'bo');
 end
 hold off;
