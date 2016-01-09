@@ -18,7 +18,7 @@ for i=1:generaciones
         generacionSemaforo =[generacionSemaforo;datos(i,1+(j-1)*2)];
         generacionAceleracion = [generacionAceleracion;datos(i,j*2)];
     end
-    medias = [medias;mean(generacionSemaforo),mean(generacionAceleracion)]; % media de la tercera columna
+    medias = [medias;mean(generacionSemaforo),mean(generacionAceleracion)];
 end
 
 %plotear datos
@@ -42,15 +42,31 @@ for i=1:generaciones
 end
 hold off;
 
-%frontera de pareto ARREGLAR?
+%frontera de pareto
 figure;
 hold on;
-axis([0.8 1.0 0.9 1.0]);
+axis([0.75 1.0 0.995 1.0]);
 unOctavo= round(tamPoblacion/8);
+datosPareto = [];
 for i=1:generaciones
-    plot(maximos(i,1),maximos(i,2),'b*');
-    for j=3:unOctavo
-        plot(datos(i,1+(j-1)*2),datos(i,j*2),'ro');
+    for j=1:unOctavo
+        datosPareto = [datosPareto; datos(i,1+(j-1)*2),datos(i,j*2)];
+    end
+end
+for i=1:size(datosPareto,1)
+    esFrontera = 1;
+    datoX = datosPareto(i,1);
+    datoY = datosPareto(i,2);
+    for j=1:size(datosPareto,1)
+        if (datoX < datosPareto(j,1) && datoY < datosPareto(j,2) )
+            esFrontera = 0;
+           break; 
+        end
+    end
+    if (esFrontera == 1)
+        plot(datoX,datoY,'r*');
+    else
+        plot(datoX,datoY,'b*');
     end
 end
 hold off;
